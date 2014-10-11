@@ -2,7 +2,9 @@ ENV['RACK_ENV'] ||= :development.to_s
 
 require 'sinatra/base'
 require 'sinatra/reloader'
-require 'mongoid'
+require 'active_record'
+
+require './config/environment'
 
 require_relative 'helpers/helpers'
 require_relative 'routers/index'
@@ -10,11 +12,6 @@ require_relative 'routers/login'
 require_relative 'models/user'
 
 class App < Sinatra::Base
-
-  Mongoid.logger.level = Logger::INFO
-  Moped.logger.level = Logger::INFO
-  Mongoid.load! File.dirname(__FILE__) + '/mongoid.yml'
-  Mongoid.raise_not_found_error = false
 
   configure :development do
     register Sinatra::Reloader

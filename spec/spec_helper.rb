@@ -1,6 +1,5 @@
 require 'capybara/rspec'
 require 'factory_girl'
-require 'rack_session_access/capybara'
 
 require_relative '../app'
 

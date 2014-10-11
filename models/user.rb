@@ -1,7 +1,7 @@
-class User
-  include Mongoid::Document
-  field :username
-  field :password
-  field :is_admin, type: Boolean
-  field :_id, default: ->{ username }
+require 'active_record'
+
+class User < ActiveRecord::Base
+  :username
+  :password
+  :is_admin
 end

@@ -5,13 +5,13 @@ feature 'Login' do
     @user = create :normal_user
   end
 
-  feature 'auto login' do
+  feature 'visit login' do
     scenario 'lets me login' do
       login_as @user
       expect(page).to have_content 'Welcome'
     end
 
-    scenario 'lets me login' do
+    scenario 'lets me auto login' do
       login_as @user
 
       visit('/login') # you have logged in

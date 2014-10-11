@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'thin'
 gem 'sinatra'
 gem 'haml'
-gem 'mongoid', '~> 4.0.0'
+gem 'mysql2'
+gem 'activerecord'
 
 group :test, :development do
   gem 'rspec'

@@ -5,7 +5,7 @@ module Sinatra
 
         def self.registered app
           get_index = lambda do
-            @user ||= User.find_by(username: session[:username])
+            @user ||= User.find_by! :username => session[:username]
             haml :index
           end
 

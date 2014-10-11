@@ -1,0 +1,12 @@
+test:
+  sessions:
+    default:
+      database: oc_test
+      hosts:
+        - localhost:27017
+development:
+  sessions:
+    default:
+      database: oc_dev
+      hosts:
+        - localhost:27017

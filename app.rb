@@ -1,15 +1,12 @@
-ENV['RACK_ENV'] ||= :development.to_s
-
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'active_record'
 
 require './config/environment'
 
-require_relative 'helpers/helpers'
-require_relative 'routers/index'
-require_relative 'routers/login'
-require_relative 'models/user'
+require './routers/index'
+require './routers/login'
+require './helpers/helpers'
 
 class App < Sinatra::Base
 

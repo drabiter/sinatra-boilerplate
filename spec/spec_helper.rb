@@ -2,7 +2,7 @@ require 'capybara/rspec'
 require 'factory_girl'
 require 'database_cleaner'
 
-require_relative '../app'
+require './app'
 
 RSpec.configure do |config|
   config.include Capybara::DSL

@@ -1,3 +1,5 @@
+require './models/user'
+
 module Sinatra
   module App
     module Routers

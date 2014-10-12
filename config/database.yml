@@ -1,5 +1,12 @@
 ---
-host: localhost
-adapter: mysql2
-username: root
-database: oc_dev
+test:
+  host: localhost
+  adapter: mysql2
+  username: root
+  database: oc_test
+
+development:
+  host: localhost
+  adapter: mysql2
+  username: root
+  database: oc_dev

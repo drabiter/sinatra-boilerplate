@@ -17,4 +17,5 @@ end
 group :test do
   gem 'capybara'
   gem 'factory_girl'
+  gem 'database_cleaner'
 end

@@ -24,5 +24,5 @@ end
 
 Capybara.app = App
 
-FactoryGirl.definition_file_paths = %w{./factories ./test/factories ./spec/factories}
+FactoryGirl.definition_file_paths = %w(./spec/factories)
 FactoryGirl.find_definitions

@@ -8,10 +8,11 @@ gem 'activerecord'
 
 group :test, :development do
   gem 'rspec'
+  gem 'rubocop'
 end
 
 group :development do
- gem 'sinatra-reloader'
+  gem 'sinatra-reloader'
 end
 
 group :test do

@@ -4,17 +4,18 @@ module Sinatra
   module App
     module Routers
       module Login
-
-        def self.registered app
-          get_login = lambda do
-            if is_authenticated?
+        def self.get_login
+          lambda do
+            if authenticated?
               redirect to('/')
             else
               haml :login
             end
           end
+        end
 
-          post_login = lambda do
+        def self.post_login
+          lambda do
             @user = User.find_by(username: params[:username],
                                  password: params[:password])
             if @user.nil?
@@ -24,11 +25,13 @@ module Sinatra
               haml :index
             end
           end
+        end
+
+        def self.registered(app)
 
           app.get '/login', &get_login
           app.post '/login', &post_login
         end
-
       end
     end
   end

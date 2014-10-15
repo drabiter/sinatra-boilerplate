@@ -6,7 +6,7 @@ describe User do
   end
 
   it 'can find by username' do
-    user = User.find_by :username => @user.username
+    user = User.find_by username: @user.username
 
     expect(user).to_not be_nil
     expect(user[:username]).to eq(@user.username)

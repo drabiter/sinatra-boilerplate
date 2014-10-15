@@ -9,15 +9,14 @@ require './routers/login'
 require './helpers/helpers'
 
 class App < Sinatra::Base
-
   configure :development do
     register Sinatra::Reloader
   end
 
   set :environment, ENV['RACK_ENV'].to_sym
   set :root, File.dirname(__FILE__)
-  set :views, Proc.new { File.join(root, 'views') }
-  set :haml, :format => :html5
+  set :views, proc { File.join(root, 'views') }
+  set :haml, format: :html5
 
   enable :sessions
 
@@ -27,11 +26,10 @@ class App < Sinatra::Base
   register Sinatra::App::Routers::Login
 
   validate_login = lambda do
-    if !is_authenticated? && request.path_info != '/login'
+    if !authenticated? && request.path_info != '/login'
       halt "Access denied, please <a href='/login'>login</a>."
     end
   end
 
-  before &validate_login
-
+  before(&validate_login)
 end

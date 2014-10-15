@@ -1,4 +1,4 @@
-require_relative '../feature_helper'
+require './spec/feature_helper'
 
 feature 'Login' do
   background do

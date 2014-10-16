@@ -1,0 +1,7 @@
+before_script:
+  - mysql -e 'create database oc_test;'
+  - bundle exec rake db:migrate
+
+language: ruby
+rvm:
+  - 2.1.1

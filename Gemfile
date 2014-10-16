@@ -8,7 +8,8 @@ gem 'activerecord'
 
 group :test, :development do
   gem 'rspec'
-  gem 'rubocop'
+  gem 'rubocop', require: false
+  gem 'rake'
 end
 
 group :development do

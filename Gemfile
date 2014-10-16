@@ -9,6 +9,7 @@ gem 'activerecord'
 group :test, :development do
   gem 'rspec'
   gem 'rubocop', require: false
+  gem 'coveralls', require: false
   gem 'rake'
 end
 

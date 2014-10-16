@@ -1,8 +1,11 @@
 require 'capybara/rspec'
 require 'factory_girl'
 require 'database_cleaner'
+require 'coveralls'
 
 require './app'
+
+Coveralls.wear!
 
 RSpec.configure do |config|
   config.include Capybara::DSL

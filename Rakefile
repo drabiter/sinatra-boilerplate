@@ -17,6 +17,11 @@ namespace :db do
     ActiveRecord::Migrator.migrate 'db/migrate'
   end
 
+  task :reset do
+    require './config/environment'
+    ActiveRecord::Migrator.migrate 'db/migrate', 0
+  end
+
   task :seed do
     ENV['RACK_ENV'] = :development.to_s
     require './config/environment'

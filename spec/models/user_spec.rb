@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require './spec/spec_helper'
 
 describe User do
   before do
@@ -12,5 +12,7 @@ describe User do
     expect(user[:username]).to eq(@user.username)
     expect(user[:password]).to eq(@user.password)
     expect(user[:is_admin]).to eq(@user.is_admin)
+    expect(user[:created_at]).to_not be_nil
+    expect(user[:updated_at]).to_not be_nil
   end
 end
